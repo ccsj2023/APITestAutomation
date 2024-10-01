@@ -6,17 +6,17 @@ What is this Repository about? This project is the outcome of my self-learning a
 What does this repo contain? This repo contains example codes of API Tests using Rest-Assured. Hamcrest Matchers are used for assertions. TestNG Listeners are used to capture the events in logs. FAKE Rest APIs on Reqres.in is used for testing. ExtentReports is a reporting library for automation testing for .NET and Java. It creates detailed and beautiful HTML reports
 
 Scenarios covered in this project:
-GET requests
-POST requests
-PUT requests
-PATCH requests
-DELETE requests
-Authentication requests
-Verify the Response Body
-Verify the Response Status Code
-Extract value from Response Body
-Perform assertions using Hamcrest Matchers
-Create POJO for passing values to request body
+GET requests,
+POST requests,
+PUT requests,
+PATCH requests,
+DELETE requests,
+Authentication requests,
+Verify the Response Body,
+Verify the Response Status Code,
+Extract value from Response Body,
+Perform assertions using Hamcrest Matchers,
+Create POJO for passing values to request body,
 Perform JSON Schema Validation.
 
 Skills: API / JAVA / TestNG / Maven / JSON / HTML

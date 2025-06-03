@@ -72,32 +72,6 @@ APITestAutomation/
   - Implementing TestNG Listeners
   - Generating ExtentReports for test execution
 
-## Getting Started
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://gitfront.io/r/cs/vdgAa7m3JB3G/APITestAutomation/
-   ```
-
-2. **Navigate to the Project Directory**:
-   ```bash
-   cd APITestAutomation
-   ```
-
-3. **Build the Project Using Maven**:
-   ```bash
-   mvn clean install
-   ```
-
-4. **Execute the Tests**:
-   ```bash
-   mvn test
-   ```
-
-5. **View the Reports**:
-   - Navigate to the `reports/` directory.
-   - Open the generated HTML report in your browser to view detailed test results.
-
 ## Skills Demonstrated
 
 - **API Testing**: Crafting and executing tests for RESTful APIs.

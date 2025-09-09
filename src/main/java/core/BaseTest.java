@@ -51,11 +51,7 @@ public class BaseTest {
 
     public void endReport() {
 
-        //ExtentReport.extentreport.flush();
-
-        ExtentReport.extentreport.close();
-
-        //Logging.setinstanceNull();
+      ExtentReport.extentreport.close();
 
     }
 }

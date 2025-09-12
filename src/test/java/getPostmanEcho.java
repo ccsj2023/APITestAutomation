@@ -51,6 +51,5 @@ public class getPostmanEcho {
         int actualStatusCode = resp.statusCode();  //RestAssured
         assertEquals(actualStatusCode, 200); //Testng
         System.out.println(resp.body().asString());
-        // accessToken = resp.path("token");//request.header("Authorization", "Bearer " + token)
     }
 }

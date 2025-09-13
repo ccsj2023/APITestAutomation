@@ -59,30 +59,30 @@ APITestAutomation/
   - PATCH
   - DELETE
 - **Response Validation**:
-  - **Status Code Verification
-  - **Response Body Verification
-  - **JSON Schema Validation
+  - Status Code Verification
+  - Response Body Verification
+  - JSON Schema Validation
 - **Data Handling**:
-  - **Extracting values from Response Body
-  - **Creating POJOs for request payloads
+  - Extracting values from Response Body
+  - Creating POJOs for request payloads
 - **Assertions**:
-  - **Utilizing Hamcrest Matchers for robust assertions
-  - **TestNG assertions
+  - Utilizing Hamcrest Matchers for robust assertions
+  - TestNG assertions
 - **Authentication & Authorization**: Demonstrating various authentication mechanisms to test protected endpoints, including:
-  - **Basic Authentication
-  - **Digest Authentication
-  - **Authorization with Bearer Tokens (by extracting a token from one request to use in another)
+  - Basic Authentication
+  - Digest Authentication
+  - Authorization with Bearer Tokens (by extracting a token from one request to use in another)
 - **Test Data Management**: Using external data sources (like JSON files) to separate test data from the test logic, enabling more flexible and data-driven test scenarios.
 - **Response Validation**: Thorough validation of API responses to ensure correctness and data integrity, including:
-  - **Status Code Verification (e.g., 200, 201, 400, 404)
-  - **Response Body Verification (checking for specific values, presence of keys)
-  - **JSON Schema Validation (ensuring the response structure is correct)
+  - Status Code Verification (e.g., 200, 201, 400, 404)
+  - Response Body Verification (checking for specific values, presence of keys)
+  - JSON Schema Validation (ensuring the response structure is correct)
 - **End-to-End Scenarios**: Building complex test flows that involve chaining multiple API calls, such as retrieving a token from one endpoint and using it to authorize a subsequent request.
 - **Negative Testing**: Validating that the API handles invalid inputs gracefully and returns appropriate error codes, ensuring the system is resilient.
 - **Ergast API for Formula 1**: Testing and validating data from the Ergast Developer API for historical Formula 1 race data.
 - **Logging and Reporting**:
-  - **Implementing TestNG Listeners
-  - **Generating ExtentReports for test execution
+  - Implementing TestNG Listeners
+  - Generating ExtentReports for test execution
 
 ## Skills Demonstrated
 

@@ -21,9 +21,9 @@ import static org.testng.AssertJUnit.assertEquals;
 /**
  * This class contains TestNG tests for validating POST requests to the reqres.in API.
  * It demonstrates various methods for creating the request body:
- * Using a direct JSON string.</li>
- * Reading the JSON payload from an external file.</li>
- * Using a Plain Old Java Object (POJO) for simple and nested JSON structures.</li>
+ * Using a direct JSON string.
+ * Reading the JSON payload from an external file.
+ * Using a Plain Old Java Object (POJO) for simple and nested JSON structures.
  * The tests use RestAssured to send HTTP requests and TestNG for assertions,
  * ensuring that the server responds with a successful 'Created' status code (201).
  *

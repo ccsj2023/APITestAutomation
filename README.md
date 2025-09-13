@@ -21,7 +21,7 @@ Welcome to **APITestAutomation**, a project dedicated to exploring and mastering
 
 ## What is this Repository About?
 
-This project serves as a practical guide to API testing using the Rest-Assured framework. It includes example codes ranging from basic tests to comprehensive end-to-end API automation scenarios. By leveraging the Rest-Assured framework for building and sending HTTP requests and TestNG for managing test execution, the repository showcases testing against public APIs, such as Reqres.in, while also integrating authenticated requests against Postman-Echo.com. It applies essential best practices by externalizing test data in JSON files, enhancing reusability and security.
+This project serves as a practical guide to API testing using the Rest-Assured framework. It includes example codes ranging from basic tests to comprehensive end-to-end API automation scenarios. By leveraging the Rest-Assured framework for building and sending HTTP requests and TestNG for managing test execution, the repository showcases testing against public APIs, such as Reqres.in and JSONPlaceholder, while also integrating authenticated requests against Postman-Echo.com. It applies essential best practices by externalizing test data in JSON files, enhancing reusability and security.
 
 ## Technologies Used
 
@@ -78,7 +78,6 @@ APITestAutomation/
   - Response Body Verification (checking for specific values, presence of keys)
   - JSON Schema Validation (ensuring the response structure is correct)
 - **End-to-End Scenarios**: Building complex test flows that involve chaining multiple API calls, such as retrieving a token from one endpoint and using it to authorize a subsequent request.
-- **Negative Testing**: Validating that the API handles invalid inputs gracefully and returns appropriate error codes, ensuring the system is resilient.
 - **Ergast API for Formula 1**: Testing and validating data from the Ergast Developer API for historical Formula 1 race data.
 - **Logging and Reporting**:
   - Implementing TestNG Listeners

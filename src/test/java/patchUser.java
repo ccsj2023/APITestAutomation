@@ -12,8 +12,31 @@ import static helper.BaseTestHelper.fileInputStreamMethod;
 import static io.restassured.RestAssured.given;
 import static org.testng.Assert.assertEquals;
 
+/**
+ * This class contains TestNG tests for validating HTTP PATCH requests to the reqres.in API.
+ * PATCH is used to apply partial modifications to a resource. The tests demonstrate
+ * different ways to construct the request body, including:
+ * <ul>
+ * <li>Providing the body as a direct JSON string.</li>
+ * <li>Reading the body from an external JSON file.</li>
+ * <li>Using a Plain Old Java Object (POJO) to represent the partial update.</li>
+ * </ul>
+ * <p>
+ * This class extends {@link BaseTest} and uses RestAssured for making API calls. It also
+ * integrates with ExtentReports for test logging and reporting.
+ * </p>
+ *
+ * @author Your Carolina Steadham
 public class patchUser extends BaseTest {
-
+    
+    /**
+     * Validates a PATCH request by providing the request body as a JSON string.
+     * <p>
+     * This test sends a PATCH request to the `/api/users/2` endpoint to partially update a user.
+     * The request body is a simple JSON string `{"name":"morpheus"}`.
+     * It asserts that the response status code is 200 (SUCCESS).
+     * </p>
+     */
     @Test(groups = "RegressionSuite")
     public void validatePatchWithString(){
         ExtentReport.extentlog =
@@ -30,6 +53,16 @@ public class patchUser extends BaseTest {
         System.out.println(response.getBody().asString());
     }
 
+    /**
+     * Validates a PATCH request where the request body is read from an external JSON file.
+     * <p>
+     * The test reads the JSON content from `patchRequestBody.json` and uses it as the
+     * request body.
+     * It asserts that the response status code is 200 (SUCCESS).
+     * </p>
+     *
+     * @throws IOException if an I/O error occurs while reading the file.
+     */
     @Test(groups = "RegressionSuite")
     public void validatePatchWithJsonFile() throws IOException {
         ExtentReport.extentlog =
@@ -47,6 +80,15 @@ public class patchUser extends BaseTest {
         System.out.println(response.getBody().asString());
     }
 
+   /**
+     * Validates a PATCH request using a POJO to represent the partial update.
+     * <p>
+     * It creates a `postRequestBody` POJO, sets only the `job` field to "tester",
+     * and uses this object as the request body. RestAssured serializes the POJO
+     * to a JSON object for the request.
+     * It asserts that the response status code is 200 (SUCCESS).
+     * </p>
+     */
     @Test
     public void validatePatchWithPojo(){
         postRequestBody patchRequest = new postRequestBody();
@@ -61,7 +103,17 @@ public class patchUser extends BaseTest {
         System.out.println("validatePatchWithPojo executed successfully");
         System.out.println(response.getBody().asString());
     }
-
+   
+    /**
+     * Validates a PATCH request using a POJO and deserializes the response back into a POJO for assertion.
+     * <p>
+     * The test sends a PATCH request with a POJO to update the `job` field. It then takes the
+     * API response and deserializes it back into a `postRequestBody` object. This allows for
+     * direct assertion on the `job` field in the response body.
+     * It verifies that the `job` field in the response matches the value sent in the request
+     * and that the status code is 200 (SUCCESS).
+     * </p>
+     */
     @Test
     public void validatePatchWithResponsePojo(){
         String job = "QA";

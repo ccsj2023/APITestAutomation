@@ -27,6 +27,7 @@ import static org.testng.Assert.assertEquals;
  * </p>
  *
  * @author Your Carolina Steadham
+ */
 public class patchUser extends BaseTest {
     
     /**

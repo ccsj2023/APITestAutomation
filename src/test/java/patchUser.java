@@ -24,6 +24,7 @@ public class patchUser extends BaseTest {
                 .body("{\"name\":\"morpheus\"}")
                 .when()
                 .patch("https://reqres.in/api/users/2");
+        // Send a PATCH request to update the user providing the request body as a Json string
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePatchWithString executed successfully");
         System.out.println(response.getBody().asString());
@@ -40,6 +41,7 @@ public class patchUser extends BaseTest {
                 .body(IOUtils.toString(fileInputStreamMethod("patchRequestBody.json")))
                 .when()
                 .patch("https://reqres.in/api/users/2");
+        // Send a PATCH request to update the user reading a Jason data for the request body
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePatchWithJsonFile executed successfully");
         System.out.println(response.getBody().asString());
@@ -54,6 +56,7 @@ public class patchUser extends BaseTest {
                 .body(patchRequest)
                 .when()
                 .patch("https://reqres.in/api/users/2");
+        // Send a PATCH request to update the user using Plain Old Java Object for the request body, to update the job
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePatchWithPojo executed successfully");
         System.out.println(response.getBody().asString());
@@ -69,6 +72,8 @@ public class patchUser extends BaseTest {
                 .body(patchRequest)
                 .when()
                 .patch("https://reqres.in/api/users/2");
+        // Send a PATCH request to update the user using POJO for the request body, 
+        // and deserializes the API response back into POJO. It allows to assert the job field in the response body
         postRequestBody responseBody = response.as(postRequestBody.class);
         System.out.println(responseBody.getJob());
         assertEquals(responseBody.getJob(), job);

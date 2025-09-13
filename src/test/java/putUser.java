@@ -21,6 +21,7 @@ import static org.testng.Assert.assertEquals;
  * The tests verify that the API returns a successful status code (200 OK) for each PUT operation.
  * The class uses RestAssured for making the HTTP requests and TestNG for test execution and assertions.
  * </p>
+ */
 public class putUser {
    /**
      * Validates a PUT request where the request body is provided as a JSON string.

@@ -19,6 +19,7 @@ public class putUser {
                 .body("{\"name\":\"morpheus\",\"job\":\"leader\"}")
                 .when()
                 .put("https://reqres.in/api/users/2");
+        // Send a PUT request to create a new user providing the request body as a Json string
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePutWithString executed successfully");
         System.out.println(response.getBody().asString());
@@ -32,6 +33,7 @@ public class putUser {
                 .body(IOUtils.toString(fileInputStreamMethod("putRequestBody.json")))
                 .when()
                 .put("https://reqres.in/api/users/2");
+        // Send a PUT request to create a new user reading an external file 
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePutWithJsonFile executed successfully");
         System.out.println(response.getBody().asString());
@@ -47,6 +49,8 @@ public class putUser {
                 .body(putRequest)
                 .when()
                 .put("https://reqres.in/api/users/2");
+        // Send a PUT request to create a new user using POJO to represent the new user data, 
+        // set both job and name fields 
         assertEquals(response.getStatusCode(), StatusCode.SUCCESS.code);
         System.out.println("validatePutWithJsonFile executed successfully");
         System.out.println(response.getBody().asString());

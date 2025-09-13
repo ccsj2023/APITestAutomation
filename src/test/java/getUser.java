@@ -15,11 +15,39 @@ import static org.hamcrest.Matchers.*;
 import static org.hamcrest.Matchers.equalTo;
 import static org.testng.Assert.assertEquals;
 
+
+/**
+ * This class contains a series of TestNG tests for validating various aspects of GET requests.
+ * It demonstrates different validation techniques using RestAssured and Hamcrest matchers.
+ * The tests cover:
+ * <ul>
+ * <li>Simple status code validation.</li>
+ * <li>Validating specific fields in the JSON response body.</li>
+ * <li>Checking for the presence of specific items in a response list.</li>
+ * <li>Asserting the size of a response list.</li>
+ * <li>Validating a string field using `containsString`.</li>
+ * <li>Using query parameters to filter results and validating the filtered response.</li>
+ * <li>Comparing status codes using TestNG's `assertEquals`.</li>
+ * </ul>
+ * <p>
+ * The class also includes utility methods to read test data from properties and JSON files.
+ * It extends `BaseTest` for common test setup and integrates with ExtentReports for logging.
+ * </p>
+ *
+ * @author Carolina Steadham
+ */
 public class getUser extends BaseTest {
     String serverAddress = PropertyReader.propertyReader("config.properties", "server");
     String endpoint = getUrl("endpoint");
     String URL = serverAddress + endpoint;
 
+    /**
+     * Retrieves an endpoint URL from a JSON test data file.
+     *
+     * @param key The key to retrieve the endpoint value from the JSON data.
+     * @return The endpoint URL as a string.
+     * @throws RuntimeException if an IOException or ParseException occurs while reading the JSON file.
+     */
     public String getUrl(String key) {
         String endpoint = null;
         try {
@@ -31,7 +59,11 @@ public class getUser extends BaseTest {
         }
         return endpoint;
     }
-
+    
+    /**
+     * Validates that a GET request to `https://reqres.in/api/users?page=2` returns a 200 OK status code.
+     * This is a basic status code validation using RestAssured's `then()` method.
+     */
     @Test
     public void validateGetUserData() {
         ExtentReport.extentlog =
@@ -44,6 +76,14 @@ public class getUser extends BaseTest {
                 statusCode(200);
     }
 
+    /**
+     * Validates specific fields in the JSON response body of a GET request.
+     * <p>
+     * This test targets the JSONPlaceholder `/todos/1` endpoint. It asserts that the
+     * response body is not empty and that the `title` and `userId` fields have
+     * the expected values using Hamcrest matchers.
+     * </p>
+     */
     @Test(groups = "RegressionSuite")
     public void validateGetResponseBody() {
         ExtentReport.extentlog =
@@ -65,6 +105,13 @@ public class getUser extends BaseTest {
                 .body("userId", equalTo(1));
     }
 
+    /**
+     * Validates that a response list contains specific items.
+     * <p>
+     * This test sends a GET request to `/posts` and uses Hamcrest's `hasItems`
+     * matcher to verify that the `title` list in the response contains two specific strings.
+     * </p>
+     */
     @Test(description = "validateResponseHasItems")
     public void validateResponseHasItems() {
         ExtentReport.extentlog =
@@ -87,6 +134,13 @@ public class getUser extends BaseTest {
         assertThat(response.jsonPath().getList("title"), hasItems("sunt aut facere repellat provident occaecati excepturi optio reprehenderit", "qui est esse"));
     }
 
+    /**
+     * Validates the size of a response array.
+     * <p>
+     * This test sends a GET request to `/photos` and uses Hamcrest's `hasSize`
+     * matcher to verify that the root JSON array has a size of 5000.
+     * </p>
+     */
     @Test
     public void validateResponseHasSize() {
         ExtentReport.extentlog =
@@ -108,6 +162,13 @@ public class getUser extends BaseTest {
         assertThat(response.jsonPath().getList(""), hasSize(5000));
     }
 
+    /**
+     * Validates a specific string value within a list in the response body.
+     * <p>
+     * This test sends a GET request to `/comments` with a query parameter and
+     * validates that the email of the first comment contains a specific substring.
+     * </p>
+     */
     @Test
     public void validateGetUserList() {
         ExtentReport.extentlog =
@@ -122,7 +183,15 @@ public class getUser extends BaseTest {
                 .statusCode(200)
                 .body("email[0]", containsString("Eliseo@gardner.biz"));
     }
-
+    
+    /**
+     * Validates a GET request with query parameters.
+     * <p>
+     * This test sends a GET request to `/users` with a `page` query parameter.
+     * It then asserts the size of the returned `data` array and verifies the details
+     * of a specific user (the third user in the list).
+     * </p>
+     */
     @Test
     public void validateGetUsersWithQueryParameters() {
         ExtentReport.extentlog =
@@ -150,6 +219,14 @@ public class getUser extends BaseTest {
         response.then().body("data[2].avatar", is("https://reqres.in/img/faces/9-image.jpg"));
     }
 
+    /**
+     * Validates the status code of a GET request using TestNG's `assertEquals`.
+     * <p>
+     * This test demonstrates an alternative way to validate the status code. It sends a request,
+     * extracts the status code into a variable, and then uses `Assert.assertEquals` from TestNG
+     * to perform the assertion, separating the request from the validation logic.
+     * </p>
+     */
     @Test()
     public void validateStatusCodeGetUser() {
         ExtentReport.extentlog =
@@ -164,7 +241,15 @@ public class getUser extends BaseTest {
         int actualStatusCode = resp.statusCode();  //RestAssured
         assertEquals(actualStatusCode, 200); //Testng
     }
-
+    
+    /**
+     * Validates a GET request with multiple query parameters.
+     * <p>
+     * This test sends a GET request with three different query parameters. It
+     * validates that the status code is 200, demonstrating how RestAssured handles
+     * multiple query parameters fluently.
+     * </p>
+     */
     @Test
     public void validateGetUsersWithMultipleQueryParams() {
         ExtentReport.extentlog =

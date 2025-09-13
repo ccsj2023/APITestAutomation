@@ -21,15 +21,11 @@ import static org.testng.AssertJUnit.assertEquals;
 /**
  * This class contains TestNG tests for validating POST requests to the reqres.in API.
  * It demonstrates various methods for creating the request body:
- * <ul>
- * <li>Using a direct JSON string.</li>
- * <li>Reading the JSON payload from an external file.</li>
- * <li>Using a Plain Old Java Object (POJO) for simple and nested JSON structures.</li>
- * </ul>
- * <p>
+ * Using a direct JSON string.</li>
+ * Reading the JSON payload from an external file.</li>
+ * Using a Plain Old Java Object (POJO) for simple and nested JSON structures.</li>
  * The tests use RestAssured to send HTTP requests and TestNG for assertions,
  * ensuring that the server responds with a successful 'Created' status code (201).
- * </p>
  *
  * @author Your Carolina Steadham
  */
@@ -37,11 +33,9 @@ public class postUser {
 
     /**
      * Validates a POST request where the request body is provided as a JSON string.
-     * <p>
      * This test sends a POST request to the `/api/users` endpoint to create a new user.
      * The request body is a hardcoded JSON string: `{"name":"morpheus","job":"leader"}`.
      * It asserts that the response status code is 201 (CREATED).
-     * </p>
      */
     @Test
     public void validatePostWithString() {
@@ -58,11 +52,9 @@ public class postUser {
 
     /**
      * Validates a POST request where the request body is read from an external JSON file.
-     * <p>
      * It reads the content of `postRequestBody.json` file using `IOUtils.toString()`
      * and uses the resulting string as the request body.
      * It asserts that the response status code is 201 (CREATED).
-     * </p>
      *
      * @throws IOException if an I/O error occurs while reading the file.
      */
@@ -82,11 +74,9 @@ public class postUser {
   
     /**
      * Validates a POST request where the request body is created using a simple POJO.
-     * <p>
      * It instantiates `postRequestBody`, sets the `name` and `job` properties,
      * and then RestAssured automatically serializes the object to JSON for the request body.
      * It asserts that the response status code is 201 (CREATED).
-     * </p>
      */
     @Test
     public void validatePostWithPojo() {
@@ -106,11 +96,9 @@ public class postUser {
 
     /**
      * Validates a POST request using a POJO that contains a list of strings.
-     * <p>
      * It creates a `postRequestBody` POJO and populates a list of languages (`Java`, `Python`)
      * to be included in the request body.
      * It asserts that the response status code is 201 (CREATED).
-     * </p>
      */
     @Test
     public void validatePostWithPojoListString(){
@@ -136,11 +124,9 @@ public class postUser {
 
    /**
      * Validates a POST request using a POJO that contains a nested list of other objects.
-     * <p>
      * It demonstrates how to build a complex request body by creating a list of `cityRequest` POJOs
      * and setting it within the main `postRequestBody` POJO.
      * It asserts that the response status code is 201 (CREATED).
-     * </p>
      */
     @Test
     public void validatePostWithPojoListObject(){

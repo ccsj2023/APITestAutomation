@@ -28,6 +28,7 @@ public class postUser {
                 .body("{\"name\":\"morpheus\",\"job\":\"leader\"}")
                 .when()
                 .post("https://reqres.in/api/users");
+        // Send a POST request to create a new user providing the request body as a Json string
         assertEquals(response.getStatusCode(), StatusCode.CREATED.code);
         System.out.println("validatePostWithString executed successfully");
         System.out.println(response.getBody().asString());
@@ -40,6 +41,7 @@ public class postUser {
                 .body(IOUtils.toString(fileInputStreamMethod("postRequestBody.json")))
                 .when()
                 .post("https://reqres.in/api/users");
+        // Send a POST request to create a new user reading the Json data from a file
         Assert.assertEquals(response.getStatusCode(), StatusCode.CREATED.code);
         System.out.println("validatePostWithJsonFile executed successfully");
         System.out.println(response.getBody().asString());
@@ -55,6 +57,7 @@ public class postUser {
                 .body(postRequest)
                 .when()
                 .post("https://reqres.in/api/users");
+        // Send a POST request to create a new user using a Plain Old Java Oject to represent the user data
         Assert.assertEquals(response.getStatusCode(), StatusCode.CREATED.code);
         System.out.println("validatePostWithPojo executed successfully");
         System.out.println(response.getBody().asString());
@@ -76,6 +79,7 @@ public class postUser {
                 .body(postRequest)
                 .when()
                 .post("https://reqres.in/api/users");
+        // Send a POST request to create a new user using POJO with a lits of string
         Assert.assertEquals(response.getStatusCode(), StatusCode.CREATED.code);
         System.out.println("validatePostWithPojoListString executed successfully");
         System.out.println(response.getBody().asString());
@@ -108,6 +112,7 @@ public class postUser {
                 .body(postRequest)
                 .when()
                 .post("https://reqres.in/api/users");
+         // Send a POST request to create a new user using POJO with a lits of objects
         Assert.assertEquals(response.getStatusCode(), StatusCode.CREATED.code);
         System.out.println("validatePostWithPojoListObject executed successfully");
         System.out.println(response.getBody().asString());

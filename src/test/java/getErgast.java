@@ -9,10 +9,8 @@ import static org.testng.Assert.assertEquals;
 /**
  * This class contains TestNG tests for validating GET requests to the Ergast Formula 1 API.
  * It specifically demonstrates how to use path parameters in a REST Assured request.
- * <p>
  * The test sends a GET request to retrieve information about F1 circuits for a specific season
  * and validates the HTTP status code of the response.
- * </p>
  *
  * @author Carolina Steadham
  */
@@ -20,16 +18,12 @@ public class getErgast extends BaseTest {
 
     /**
      * Validates the response body and status code for a GET request using a path parameter.
-     * <p>
      * This test performs the following steps:
-     * <ol>
-     * <li>Sets the `raceSeason` path parameter to `2016`.</li>
-     * <li>Sends a GET request to `http://ergast.com/api/f1/{raceSeason}/circuits.json`.</li>
-     * <li>Extracts the status code from the response.</li>
-     * <li>Asserts that the status code is 200 using TestNG's `assertEquals`.</li>
-     * <li>Prints the response body to the console.</li>
-     * </ol>
-     * </p>
+     * Sets the `raceSeason` path parameter to `2016`.
+     * Sends a GET request to `http://ergast.com/api/f1/{raceSeason}/circuits.json`.</li>
+     * Extracts the status code from the response.
+     * Asserts that the status code is 200 using TestNG's `assertEquals`.</li>
+     * Prints the response body to the console.
      */
     @Test(description = "Validate the status code for GET users endpoint", groups = "RegressionSuite")
     public void validateResponseBodyGetPathParam() {

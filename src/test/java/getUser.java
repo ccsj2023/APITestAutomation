@@ -20,19 +20,15 @@ import static org.testng.Assert.assertEquals;
  * This class contains a series of TestNG tests for validating various aspects of GET requests.
  * It demonstrates different validation techniques using RestAssured and Hamcrest matchers.
  * The tests cover:
- * <ul>
- * <li>Simple status code validation.</li>
- * <li>Validating specific fields in the JSON response body.</li>
- * <li>Checking for the presence of specific items in a response list.</li>
- * <li>Asserting the size of a response list.</li>
- * <li>Validating a string field using `containsString`.</li>
- * <li>Using query parameters to filter results and validating the filtered response.</li>
- * <li>Comparing status codes using TestNG's `assertEquals`.</li>
- * </ul>
- * <p>
+ * Simple status code validation.</li>
+ * Validating specific fields in the JSON response body.</li>
+ * Checking for the presence of specific items in a response list.</li>
+ * Asserting the size of a response list.</li>
+ * Validating a string field using `containsString`.</li>
+ * Using query parameters to filter results and validating the filtered response.</li>
+ * Comparing status codes using TestNG's `assertEquals`.</li>
  * The class also includes utility methods to read test data from properties and JSON files.
  * It extends `BaseTest` for common test setup and integrates with ExtentReports for logging.
- * </p>
  *
  * @author Carolina Steadham
  */
@@ -43,7 +39,6 @@ public class getUser extends BaseTest {
 
     /**
      * Retrieves an endpoint URL from a JSON test data file.
-     *
      * @param key The key to retrieve the endpoint value from the JSON data.
      * @return The endpoint URL as a string.
      * @throws RuntimeException if an IOException or ParseException occurs while reading the JSON file.

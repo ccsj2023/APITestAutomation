@@ -16,15 +16,11 @@ import static org.testng.Assert.assertEquals;
  * This class contains TestNG tests for validating HTTP PATCH requests to the reqres.in API.
  * PATCH is used to apply partial modifications to a resource. The tests demonstrate
  * different ways to construct the request body, including:
- * <ul>
- * <li>Providing the body as a direct JSON string.</li>
- * <li>Reading the body from an external JSON file.</li>
- * <li>Using a Plain Old Java Object (POJO) to represent the partial update.</li>
- * </ul>
- * <p>
+ * Providing the body as a direct JSON string.
+ * Reading the body from an external JSON file.
+ * Using a Plain Old Java Object (POJO) to represent the partial update.
  * This class extends {@link BaseTest} and uses RestAssured for making API calls. It also
  * integrates with ExtentReports for test logging and reporting.
- * </p>
  *
  * @author Your Carolina Steadham
  */
@@ -32,11 +28,9 @@ public class patchUser extends BaseTest {
     
     /**
      * Validates a PATCH request by providing the request body as a JSON string.
-     * <p>
      * This test sends a PATCH request to the `/api/users/2` endpoint to partially update a user.
      * The request body is a simple JSON string `{"name":"morpheus"}`.
      * It asserts that the response status code is 200 (SUCCESS).
-     * </p>
      */
     @Test(groups = "RegressionSuite")
     public void validatePatchWithString(){

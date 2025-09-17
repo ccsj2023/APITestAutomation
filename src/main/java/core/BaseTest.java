@@ -19,6 +19,8 @@ import java.io.IOException;
  * 2. Logging the status (PASS, FAIL, or SKIP) of each test method after it runs.
  * 3. Closing the report after the entire test suite has completed.
  * All test classes should inherit from this class to enable reporting.
+ *
+ * @author Carolina Steadham
  */
 public class BaseTest {
     @BeforeSuite(alwaysRun = true)

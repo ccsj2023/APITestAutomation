@@ -20,15 +20,17 @@ import static org.testng.Assert.assertEquals;
  * This class contains a series of TestNG tests for validating various aspects of GET requests.
  * It demonstrates different validation techniques using RestAssured and Hamcrest matchers.
  * The tests cover:
- * Simple status code validation.</li>
- * Validating specific fields in the JSON response body.</li>
- * Checking for the presence of specific items in a response list.</li>
- * Asserting the size of a response list.</li>
- * Validating a string field using `containsString`.</li>
- * Using query parameters to filter results and validating the filtered response.</li>
- * Comparing status codes using TestNG's `assertEquals`.</li>
+ * Simple status code validation.
+ * Validating specific fields in the JSON response body.
+ * Checking for the presence of specific items in a response list.
+ * Asserting the size of a response list.
+ * Validating a string field using containsString.
+ * Using query parameters to filter results and validating the filtered response.
+ * Comparing status codes using TestNG's assertEquals.
  * The class also includes utility methods to read test data from properties and JSON files.
- * It extends `BaseTest` for common test setup and integrates with ExtentReports for logging.
+ * It extends BaseTest for common test setup and integrates with ExtentReports for logging.
+ * It uses the ExtentReports library to log the test's execution,
+ * which helps in generating detailed and professional test reports.
  *
  * @author Carolina Steadham
  */
@@ -55,9 +57,11 @@ public class getUser extends BaseTest {
         return endpoint;
     }
     
-    /**
-     * Validates that a GET request to `https://reqres.in/api/users?page=2` returns a 200 OK status code.
-     * This is a basic status code validation using RestAssured's `then()` method.
+    /*
+     * Validates that a GET request to https://reqres.in/api/users?page=2 returns a 200 OK status code.
+     * This is a basic status code validation using RestAssured's then() method.
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test
     public void validateGetUserData() {
@@ -73,11 +77,11 @@ public class getUser extends BaseTest {
 
     /**
      * Validates specific fields in the JSON response body of a GET request.
-     * <p>
-     * This test targets the JSONPlaceholder `/todos/1` endpoint. It asserts that the
-     * response body is not empty and that the `title` and `userId` fields have
+     * This test targets the JSONPlaceholder /todos/1 endpoint. It asserts that the
+     * response body is not empty and that the title and userId fields have
      * the expected values using Hamcrest matchers.
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test(groups = "RegressionSuite")
     public void validateGetResponseBody() {
@@ -102,10 +106,10 @@ public class getUser extends BaseTest {
 
     /**
      * Validates that a response list contains specific items.
-     * <p>
-     * This test sends a GET request to `/posts` and uses Hamcrest's `hasItems`
-     * matcher to verify that the `title` list in the response contains two specific strings.
-     * </p>
+     * This test sends a GET request to /posts and uses Hamcrest's hasItems
+     * matcher to verify that the title list in the response contains two specific strings.
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test(description = "validateResponseHasItems")
     public void validateResponseHasItems() {
@@ -131,10 +135,10 @@ public class getUser extends BaseTest {
 
     /**
      * Validates the size of a response array.
-     * <p>
-     * This test sends a GET request to `/photos` and uses Hamcrest's `hasSize`
+     * This test sends a GET request to /photos and uses Hamcrest's hasSize
      * matcher to verify that the root JSON array has a size of 5000.
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test
     public void validateResponseHasSize() {
@@ -159,10 +163,10 @@ public class getUser extends BaseTest {
 
     /**
      * Validates a specific string value within a list in the response body.
-     * <p>
-     * This test sends a GET request to `/comments` with a query parameter and
+     * This test sends a GET request to /comments with a query parameter and
      * validates that the email of the first comment contains a specific substring.
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test
     public void validateGetUserList() {
@@ -181,11 +185,11 @@ public class getUser extends BaseTest {
     
     /**
      * Validates a GET request with query parameters.
-     * <p>
-     * This test sends a GET request to `/users` with a `page` query parameter.
-     * It then asserts the size of the returned `data` array and verifies the details
+     * This test sends a GET request to /users with a page query parameter.
+     * It then asserts the size of the returned data array and verifies the details
      * of a specific user (the third user in the list).
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test
     public void validateGetUsersWithQueryParameters() {
@@ -215,12 +219,12 @@ public class getUser extends BaseTest {
     }
 
     /**
-     * Validates the status code of a GET request using TestNG's `assertEquals`.
-     * <p>
+     * Validates the status code of a GET request using TestNG's assertEquals.
      * This test demonstrates an alternative way to validate the status code. It sends a request,
-     * extracts the status code into a variable, and then uses `Assert.assertEquals` from TestNG
+     * extracts the status code into a variable, and then uses Assert.assertEquals from TestNG
      * to perform the assertion, separating the request from the validation logic.
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test()
     public void validateStatusCodeGetUser() {
@@ -239,11 +243,11 @@ public class getUser extends BaseTest {
     
     /**
      * Validates a GET request with multiple query parameters.
-     * <p>
      * This test sends a GET request with three different query parameters. It
      * validates that the status code is 200, demonstrating how RestAssured handles
      * multiple query parameters fluently.
-     * </p>
+     * It uses the ExtentReports library to log the test's execution,
+     * which helps in generating detailed and professional test reports.
      */
     @Test
     public void validateGetUsersWithMultipleQueryParams() {

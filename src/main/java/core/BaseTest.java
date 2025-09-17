@@ -7,11 +7,19 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import utils.ExtentReport;
-
-
 import java.io.IOException;
 
-
+/*
+ * This is the BaseTest class that handles the setup and teardown
+ * of the test reporting environment. It uses TestNG annotations to
+ * automatically generate HTML reports for all test cases.
+ *
+ * It is responsible for:
+ * 1. Initializing Extent Reports before the test suite begins.
+ * 2. Logging the status (PASS, FAIL, or SKIP) of each test method after it runs.
+ * 3. Closing the report after the entire test suite has completed.
+ * All test classes should inherit from this class to enable reporting.
+ */
 public class BaseTest {
     @BeforeSuite(alwaysRun = true)
 

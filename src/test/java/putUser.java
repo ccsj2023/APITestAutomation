@@ -17,12 +17,14 @@ import static org.testng.Assert.assertEquals;
  * Using a Plain Old Java Object (POJO)
  * The tests verify that the API returns a successful status code (200 OK) for each PUT operation.
  * The class uses RestAssured for making the HTTP requests and TestNG for test execution and assertions.
+ *
+ * @author Carolina Steadham
  */
 public class putUser {
    /**
      * Validates a PUT request where the request body is provided as a JSON string.
      * It sends a PUT request to update user with ID 2 on the reqres.in API.
-     * The request body is a hardcoded JSON string: `{"name":"morpheus","job":"leader"}`.
+     * The request body is a hardcoded JSON string: {"name":"morpheus","job":"leader"}.
      * It asserts that the response status code is 200 (SUCCESS).
      */
     @Test
@@ -40,7 +42,7 @@ public class putUser {
     }
    /**
      * Validates a PUT request where the request body is read from an external JSON file.
-     * It uses `IOUtils.toString()` to convert the content of `putRequestBody.json` file
+     * It uses IOUtils.toString() to convert the content of putRequestBody.json file
      * into a string which is then used as the request body.
      * It asserts that the response status code is 200 (SUCCESS).
      *
@@ -62,7 +64,7 @@ public class putUser {
 
     /**
      * Validates a PUT request where the request body is created using a POJO (Plain Old Java Object).
-     * It creates an instance of `postRequestBody` POJO, sets the `name` and `job` fields,
+     * It creates an instance of postRequestBody POJO, sets the name and job fields,
      * and uses this object as the request body. RestAssured automatically serializes the POJO to JSON.
      * It asserts that the response status code is 200 (SUCCESS).
      */

@@ -9,7 +9,7 @@ import java.util.List;
  * This class serves as a blueprint for creating structured data to be sent in an API request.
  * It provides standard getter and setter methods to manage its properties, facilitating
  * easy serialization and deserialization of the request body during API automation testing.
-  *
+ *
  * @author Carolina Steadham
  */
 public class postRequestBody {

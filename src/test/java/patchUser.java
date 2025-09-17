@@ -22,7 +22,7 @@ import static org.testng.Assert.assertEquals;
  * This class extends {@link BaseTest} and uses RestAssured for making API calls. It also
  * integrates with ExtentReports for test logging and reporting.
  *
- * @author: Carolina Steadham
+ * @author Carolina Steadham
  */
 public class patchUser extends BaseTest {
     

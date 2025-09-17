@@ -2,6 +2,16 @@ package pojo;
 
 import java.util.List;
 
+/*
+ * This is a Plain Old Java Object (POJO) class that models a complex JSON request body for an API call.
+ * It encapsulates nested data structures, including a list of strings and a list of other objects (cityRequest).
+ *
+ * This class serves as a blueprint for creating structured data to be sent in an API request.
+ * It provides standard getter and setter methods to manage its properties, facilitating
+ * easy serialization and deserialization of the request body during API automation testing.
+  *
+ * @author Carolina Steadham
+ */
 public class postRequestBody {
     private String name;
     private String job;

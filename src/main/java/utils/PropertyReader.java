@@ -5,6 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+ /*
+ * This utility class is designed to read and retrieve data from properties files.
+ * It provides a simple and reusable method to access key-value pairs from
+ * configuration files, ensuring that test scripts are not hardcoded with
+ * environment-specific data like URLs, credentials, or file paths.
+ *
+ * @author Carolina Steadham
+ */
 public class PropertyReader  {
 
     public static String propertyReader(String filePath, String key) {

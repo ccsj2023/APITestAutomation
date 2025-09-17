@@ -5,6 +5,17 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Date;
 
+/*
+ * This is a helper class that provides utility methods for the test framework.
+ * These methods are designed to simplify common file and system-related tasks.
+ *
+ * It is responsible for:
+ * 1. Reading files from the resources/TestData directory.
+ * 2. Creating a new folder if it doesn't already exist.
+ * 3. Generating a unique timestamp for use in file and folder names.
+ *
+ * @author Carolina Steadham
+ */
 public class BaseTestHelper {
     private static FileInputStream fileInputStream;
 

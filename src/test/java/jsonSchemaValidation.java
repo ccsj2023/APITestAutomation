@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
  * The test fetches a list of users from the reqres.in API and validates the response
  * against a schema file located at resources/Schema/ExpectedSchema.json.
  *
- * @author Your Carolina Steadham 
+ * @author Carolina Steadham 
  */   
 public class jsonSchemaValidation {
 

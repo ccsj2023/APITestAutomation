@@ -9,6 +9,18 @@ import org.json.simple.parser.ParseException;
 import java.io.File;
 import java.io.IOException;
 
+/*
+ * This utility class provides methods for reading and parsing JSON files.
+ * It is designed to simplify the process of accessing test data stored in JSON format,
+ * making test automation scripts more readable and data-driven.
+ *
+ * It is responsible for:
+ * 1. Reading JSON data from the 'testdata.json' file.
+ * 2. Retrieving specific key-value pairs from the JSON object.
+ * 3. Handling and parsing JSON arrays.
+ *
+ * @author Carolina Steadham
+ */
 public class JsonReader {
     public static String getTestData(String key) throws IOException, ParseException {
         String testDataValue;

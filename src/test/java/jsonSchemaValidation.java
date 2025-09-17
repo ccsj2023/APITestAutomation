@@ -10,7 +10,7 @@ import static io.restassured.RestAssured.given;
  * It demonstrates how to use RestAssured's {@link JsonSchemaValidator} to ensure that
  * the structure of the JSON response body conforms to a predefined schema file.
  * The test fetches a list of users from the reqres.in API and validates the response
- * against a schema file located at `resources/Schema/ExpectedSchema.json`.
+ * against a schema file located at resources/Schema/ExpectedSchema.json.
  *
  * @author Your Carolina Steadham 
  */   
@@ -19,11 +19,11 @@ public class jsonSchemaValidation {
     /**
      * Validates the JSON schema of the response from the users API endpoint.
      * This test performs the following steps:
-     * Loads the expected JSON schema from a file.</li>
-     * Sends a GET request to `https://reqres.in/api/users?page=234`.</li>
-     * Asserts that the response status code is 200.</li>
+     * Loads the expected JSON schema from a file.
+     * Sends a GET request to https://reqres.in/api/users?page=234.
+     * Asserts that the response status code is 200.
      * Validates the response body against the loaded JSON schema using
-     * {@link JsonSchemaValidator#matchesJsonSchema(File)}.</li>
+     * {@link JsonSchemaValidator#matchesJsonSchema(File)}.
      */
     @Test
     public void jsonSchemaValidation() {

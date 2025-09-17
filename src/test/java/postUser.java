@@ -27,14 +27,14 @@ import static org.testng.AssertJUnit.assertEquals;
  * The tests use RestAssured to send HTTP requests and TestNG for assertions,
  * ensuring that the server responds with a successful 'Created' status code (201).
  *
- * @author Your Carolina Steadham
+ * @author Carolina Steadham
  */
 public class postUser {
 
     /**
      * Validates a POST request where the request body is provided as a JSON string.
-     * This test sends a POST request to the `/api/users` endpoint to create a new user.
-     * The request body is a hardcoded JSON string: `{"name":"morpheus","job":"leader"}`.
+     * This test sends a POST request to the /api/users endpoint to create a new user.
+     * The request body is a hardcoded JSON string: {"name":"morpheus","job":"leader"}.
      * It asserts that the response status code is 201 (CREATED).
      */
     @Test
@@ -52,7 +52,7 @@ public class postUser {
 
     /**
      * Validates a POST request where the request body is read from an external JSON file.
-     * It reads the content of `postRequestBody.json` file using `IOUtils.toString()`
+     * It reads the content of `postRequestBody.json` file using IOUtils.toString()
      * and uses the resulting string as the request body.
      * It asserts that the response status code is 201 (CREATED).
      *
@@ -74,7 +74,7 @@ public class postUser {
   
     /**
      * Validates a POST request where the request body is created using a simple POJO.
-     * It instantiates `postRequestBody`, sets the `name` and `job` properties,
+     * It instantiates postRequestBody, sets the name and job properties,
      * and then RestAssured automatically serializes the object to JSON for the request body.
      * It asserts that the response status code is 201 (CREATED).
      */
@@ -96,7 +96,7 @@ public class postUser {
 
     /**
      * Validates a POST request using a POJO that contains a list of strings.
-     * It creates a `postRequestBody` POJO and populates a list of languages (`Java`, `Python`)
+     * It creates a postRequestBody POJO and populates a list of languages (Java, Python)
      * to be included in the request body.
      * It asserts that the response status code is 201 (CREATED).
      */
@@ -124,8 +124,8 @@ public class postUser {
 
    /**
      * Validates a POST request using a POJO that contains a nested list of other objects.
-     * It demonstrates how to build a complex request body by creating a list of `cityRequest` POJOs
-     * and setting it within the main `postRequestBody` POJO.
+     * It demonstrates how to build a complex request body by creating a list of cityRequest POJOs
+     * and setting it within the main postRequestBody POJO.
      * It asserts that the response status code is 201 (CREATED).
      */
     @Test
